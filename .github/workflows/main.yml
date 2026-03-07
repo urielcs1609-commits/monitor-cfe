@@ -1,0 +1,20 @@
+name: Monitor CFE Diarios
+on:
+  schedule:
+    - cron: '0 12 * * *' # Esto corre todos los días a las 12:00 PM UTC
+  workflow_dispatch: # Esto permite que tú lo corras manualmente cuando quieras
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4
+      - name: Run script
+        run: python monitor.py
