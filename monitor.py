@@ -10,8 +10,7 @@ def enviar_telegram(mensaje):
     
     try:
         response = requests.post(url, data=payload)
-        # Esto nos dirá en la consola si Telegram aceptó el mensaje
-        print(f"Respuesta de Telegram: {response.status_code} - {response.text}")
+        print(f"Respuesta de Telegram: {response.status_code}")
     except Exception as e:
         print(f"Error al enviar a Telegram: {e}")
 
@@ -24,9 +23,10 @@ def check_cfe():
     
     tablas = soup.find_all('table')
     
-        if len(tablas) > 0: 
+    # Esta es la parte que dio el error. 
+    # Asegúrate de que el "if" esté alineado con la "r" de "response" arriba.
+    if len(tablas) > 0:
         print("¡HAY CONVOCATORIAS DETECTADAS!")
-        # ESTA ES LA LÍNEA QUE FALTABA CONECTAR:
         enviar_telegram("🚀 ¡Nueva convocatoria en CFE! Revisa aquí: https://apps.cfe.mx/SolicitudesEmpleo")
     else:
         print("Sin novedades.")
