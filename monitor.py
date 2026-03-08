@@ -25,7 +25,7 @@ def check_cfe():
     tablas = soup.find_all('table')
     
     # RECUERDA: Cambiar == por > cuando termines la prueba
-    if len(tablas) == 0: 
+    if len(tablas) > 0: 
         print("¡HAY CONVOCATORIAS DETECTADAS!")
         # ESTA ES LA LÍNEA QUE FALTABA CONECTAR:
         enviar_telegram("🚀 ¡Nueva convocatoria en CFE! Revisa aquí: https://apps.cfe.mx/SolicitudesEmpleo")
