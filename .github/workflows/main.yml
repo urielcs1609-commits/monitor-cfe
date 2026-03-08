@@ -1,7 +1,7 @@
 name: Monitor CFE Diarios
 on:
   schedule:
-    - cron: '0 12 * * *' # Esto corre todos los días a las 12:00 PM UTC
+    - cron: '0 14,2 * * *' # Esto corre todos los días a las 12:00 PM UTC
   workflow_dispatch: # Esto permite que tú lo corras manualmente cuando quieras
 
 jobs:
