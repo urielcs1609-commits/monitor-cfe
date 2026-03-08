@@ -11,7 +11,7 @@ def check_cfe():
     # Buscamos cualquier tabla en la página
     tablas = soup.find_all('table')
     
-    if len(tablas) > 0:
+    if len(tablas) == 0:
         print("¡HAY CONVOCATORIAS DETECTADAS!")
         # Aquí es donde podrías agregar lógica de envío de mail
         return True
